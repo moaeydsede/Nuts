@@ -1,0 +1,85 @@
+:root{
+  --bg:#0b0f14;
+  --bg2:#0f141a;
+  --muted:#9fb0c7;
+  --brand:#ffd36a;
+  --brand2:#ffb703;
+  --ok:#7cf7d4;
+  --danger:#ff6b6b;
+  --shadow:0 12px 30px rgba(0,0,0,.35);
+  --r:22px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:radial-gradient(1200px 600px at 70% -10%, rgba(255,211,106,.18), transparent 55%),
+             linear-gradient(180deg,var(--bg2),var(--bg));
+  color:#eaf2ff;
+}
+.topbar{position:sticky;top:0;z-index:10;background:rgba(15,20,26,.88);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px)}
+.topbar__inner{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;gap:10px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand__logo{width:46px;height:46px;border-radius:18px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);overflow:hidden;display:grid;place-items:center;box-shadow:0 10px 22px rgba(0,0,0,.35)}
+.brand__logo img{width:100%;height:100%;object-fit:cover;display:none}
+#logoFallback{font-weight:900;color:var(--brand)}
+.brand__name{font-weight:900;color:var(--brand)}
+.brand__line{font-size:12px;color:var(--muted)}
+.social{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.sbtn{width:38px;height:38px;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);display:grid;place-items:center;cursor:pointer;transition:transform .15s ease}
+.sbtn:active{transform:scale(.96)}
+.sbtn svg{width:20px;height:20px;fill:var(--brand)}
+.wrap{padding:12px 12px 120px}
+.center{text-align:center;padding:44px 10px}
+.spinner{width:52px;height:52px;border-radius:50%;border:6px solid rgba(255,255,255,.10);border-top-color:var(--brand);animation:spin 1s linear infinite;margin:0 auto 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.strong{font-weight:900}
+.notice{display:flex;gap:10px;align-items:flex-start;border:1px solid rgba(255,211,106,.25);background:rgba(255,211,106,.06);border-radius:18px;padding:10px;margin:10px 0}
+.notice__icon{width:28px;height:28px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#111;font-weight:900}
+.notice__txt{color:#eaf2ff;opacity:.9;font-size:12px;line-height:1.5}
+.searchRow{display:flex;gap:10px;margin-bottom:10px}
+.search{flex:1;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04)}
+.search.mini{margin:10px 0}
+.searchIcon{opacity:.7}
+.search input{flex:1;background:none;border:0;color:#fff;outline:none}
+.pill{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:var(--muted);font-size:12px}
+.tabs{display:flex;gap:8px;overflow:auto;margin:10px 0;padding-bottom:2px}
+.tab{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:var(--muted);padding:8px 14px;border-radius:999px;font-weight:800;white-space:nowrap;cursor:pointer}
+.tab.active{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#1a1f27;border-color:transparent}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.06);border-radius:var(--r);padding:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px}
+.row{display:flex;justify-content:space-between;gap:10px}
+.price{color:var(--brand);font-weight:900}
+.desc{font-size:12px;color:var(--muted);min-height:16px}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge2{font-size:11px;color:var(--muted);border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05);padding:4px 8px;border-radius:999px}
+.btn{border:0;border-radius:16px;padding:10px 12px;font-weight:900;cursor:pointer;transition:transform .12s ease}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:linear-gradient(135deg,var(--ok),#5de0c4);color:#081014}
+.btn.ghost{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#fff}
+.btn.whatsapp{background:linear-gradient(135deg,#25d366,#1ebe5d);color:#fff;flex:1}
+.fab{position:fixed;left:0;right:0;bottom:10px;padding:0 12px;z-index:20}
+.fab__inner{background:rgba(20,26,34,.92);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:10px;display:flex;align-items:center;gap:10px;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.badge{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#000;padding:4px 10px;border-radius:999px;font-weight:900}
+.total{flex:1}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);z-index:30;display:flex;align-items:flex-end}
+.sheet{width:100%;max-height:92vh;overflow:auto;background:#0e1319;border:1px solid rgba(255,255,255,.10);border-top-left-radius:26px;border-top-right-radius:26px;padding:14px}
+.sheet__head{display:flex;align-items:center;justify-content:space-between}
+.x{width:40px;height:40px;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:#fff;font-size:22px;cursor:pointer}
+.rowBtns{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.err{background:rgba(255,0,0,.10);border:1px solid rgba(255,0,0,.35);color:#ffb1b1;padding:14px;border-radius:18px;white-space:pre-line}
+.cartLine{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);border-radius:18px;padding:10px;margin:8px 0}
+.lineTop{display:flex;justify-content:space-between;gap:10px}
+.lineName{font-weight:900}
+.lineSub{font-size:12px;color:var(--muted)}
+.qtyRow{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+.qbtn{width:34px;height:34px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#fff;font-weight:900;cursor:pointer}
+.qin{width:88px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#111723;color:#fff;padding:8px;text-align:center}
+.trash{margin-inline-start:auto;color:var(--danger);font-weight:900;cursor:pointer;background:none;border:0}
+.form{display:grid;gap:10px;margin-top:10px}
+.field label{font-size:12px;color:var(--muted)}
+.field input,.field textarea{width:100%;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:#111723;color:#fff;padding:10px;outline:none}
+.field textarea{min-height:70px;resize:vertical}

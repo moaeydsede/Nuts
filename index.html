@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>Menu</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <div class="brand">
+      <div class="brand__logo">
+        <img id="logoImg" alt="logo"/>
+        <div id="logoFallback">NS</div>
+      </div>
+      <div class="brand__text">
+        <div class="brand__name" id="shopName">...</div>
+        <div class="brand__line" id="deliveryLine"></div>
+      </div>
+    </div>
+
+    <div class="social" id="social"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="loading" class="center">
+    <div class="spinner"></div>
+    <div class="muted strong">جاري التحميل...</div>
+    <div class="muted small" id="loadingHint"></div>
+  </section>
+
+  <section id="errorBox" class="center" style="display:none;">
+    <div class="err" id="errorText"></div>
+    <button class="btn ghost" id="retryBtn">إعادة المحاولة</button>
+  </section>
+
+  <section id="content" style="display:none;">
+    <div class="searchRow">
+      <div class="search">
+        <span class="searchIcon">⌕</span>
+        <input id="q" placeholder="ابحث عن صنف..."/>
+      </div>
+      <div class="pill" id="itemsCount">0 صنف</div>
+    </div>
+
+    <div class="tabs" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<div class="fab" id="fab" style="display:none;">
+  <div class="fab__inner">
+    <div class="badge" id="cartBadge">0</div>
+    <div class="total">
+      <div class="muted small">الإجمالي</div>
+      <div class="strong" id="totalVal">0</div>
+    </div>
+    <button class="btn ghost" id="openCartBtn">السلة</button>
+    <button class="btn primary" id="checkoutBtn">إتمام وإرسال</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" style="display:none;">
+  <div class="sheet">
+    <div class="sheet__head">
+      <div class="strong">السلة / بيانات العميل</div>
+      <button class="x" id="closeBtn">×</button>
+    </div>
+
+    <div class="notice">
+      <div class="notice__icon">★</div>
+      <div class="notice__txt">
+        تقدر تعدّل الكمية أو الوزن من هنا قبل الإرسال، وتضيف أصناف من داخل السلة.
+      </div>
+    </div>
+
+    <div class="search mini">
+      <span class="searchIcon">＋</span>
+      <input id="cartSearch" placeholder="إضافة صنف من داخل السلة (اكتب الاسم)..." />
+    </div>
+    <div id="cartAddList"></div>
+
+    <div class="rowBtns">
+      <button class="btn ghost" id="clearCartBtn">تفريغ السلة</button>
+    </div>
+
+    <div id="cartLines"></div>
+
+    <div class="form">
+      <div class="field">
+        <label>اسم العميل *</label>
+        <input id="customerName" placeholder="مثال: محمد أحمد"/>
+      </div>
+      <div class="field">
+        <label>رقم الهاتف (اختياري)</label>
+        <input id="customerPhone" placeholder="01xxxxxxxxx"/>
+      </div>
+      <div class="field">
+        <label>العنوان (اختياري)</label>
+        <input id="address" placeholder="المدينة / المنطقة / الشارع"/>
+      </div>
+      <div class="field">
+        <label>ملاحظات (اختياري)</label>
+        <textarea id="notes" placeholder="مثال: نصف كيلو فستق + 2 قطعة شوكولاتة..."></textarea>
+      </div>
+    </div>
+
+    <div class="rowBtns">
+      <button class="btn whatsapp" id="sendWaBtn">إرسال الطلب واتساب</button>
+      <button class="btn ghost" id="copyBtn">نسخ نص الطلب</button>
+    </div>
+
+    <div class="muted small" id="hint"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
